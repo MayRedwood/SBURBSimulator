@@ -339,6 +339,17 @@ List<Player> findDoomedPlayers(List<Player> playerList) {
     return ret;
 }
 
+/*List<Player> findMortalPlayers(List<Player> playerList) {
+    List<Player> ret = <Player>[];
+    for (int i = 0; i < playerList.length; i++) {
+        GameEntity p = playerList[i];
+        if (!p.godTier) {
+            ret.add(p);
+        }
+    }
+    return ret;
+}*/
+
 //TODO shove this somewhere mroe useful, rename so not just players
 //take in a generic type as long as it extends generic and return a generic type, you get mix of sprites and players, returns that way.i hope
 List<T> findLiving<T extends GameEntity> (List<T> playerList){

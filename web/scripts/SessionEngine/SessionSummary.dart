@@ -332,7 +332,12 @@ class SessionSummary {
                     ////;
                     return false;
                 }
-            } else if (filter == "scratched") {
+            }/* else if (filter == "allOfThemAreGodTier") {
+                if (this.getNumStat("numDead") != 0) { //if this were an and on the outer if, it would let it fall down to the else if(!this[filter) and i don't want this.
+                    ////;
+                    return false;
+                }
+            }*/ else if (filter == "scratched") {
                 if (!this.scratched) { // a special thing this.isn't in hash.
                     return false;
                 }
