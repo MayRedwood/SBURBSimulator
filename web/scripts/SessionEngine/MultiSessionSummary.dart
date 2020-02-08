@@ -29,6 +29,7 @@ class MultiSessionSummary {
         setStat("ringWraithCrash", 0);
 
         setStat("timesAllDied", 0);
+        setStat("allOfThemAreGodTier", 0);
         setStat("yellowYard", 0);
         setStat("scratchAvailable", 0);
         setStat("blackKingDead", 0);
@@ -348,7 +349,7 @@ class MultiSessionSummary {
     }
 
     bool isEndingProperty(String propertyName) {
-        if (propertyName == "yellowYard" || propertyName == "timesAllLived" || propertyName == "timesAllDied" || propertyName == "scratchAvailable" || propertyName == "won") return true;
+        if (propertyName == "yellowYard" || propertyName == "timesAllLived" || propertyName == "timesAllDied" || propertyName == "scratchAvailable" || propertyName == "won" || propertyName == "allOfThemAreGodTier") return true;
         if (propertyName == "ringWraithCrash" ||propertyName == "cataclysmCrash" || propertyName == "crashedFromPlayerActions" || propertyName == "ectoBiologyStarted" || propertyName == "comboSessions" || propertyName == "threeTimesSessionCombo") return true;
         if (propertyName == "fourTimesSessionCombo" || propertyName == "fiveTimesSessionCombo" || propertyName == "holyShitMmmmmonsterCombo" || propertyName == "numberFullFrog") return true;
         if (propertyName == "numberPurpleFrog" || propertyName == "numberFullFrog" || propertyName == "numberSickFrog" || propertyName == "numberNoFrog" || propertyName == "rocksFell" || propertyName == "opossumVictory") return true;
@@ -553,6 +554,7 @@ class MultiSessionSummary {
             if (ss.getBoolStat("scratchAvailable")) mss.incNumStat("scratchAvailable");
             if (ss.getBoolStat("yellowYard")) mss.incNumStat("yellowYard");
             if (ss.getNumStat("numLiving") == 0) mss.incNumStat("timesAllDied");
+            if (ss.getNumStat("numMortal") == 0) mss.incNumStat("allOfThemAreGodTier");
             if (ss.getNumStat("numDead") == 0) mss.incNumStat("timesAllLived");
             if (ss.getBoolStat("ectoBiologyStarted")) mss.incNumStat("ectoBiologyStarted");
             if (ss.getBoolStat("denizenBeat")) mss.incNumStat("denizenBeat");

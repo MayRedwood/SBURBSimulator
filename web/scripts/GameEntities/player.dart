@@ -60,7 +60,7 @@ class Player extends GameEntity{
     bool leveledTheHellUp = false; //triggers level up scene.
     List<String> mylevels = null;
     num level_index = -1; //will be ++ before i query
-    bool godTier = false;
+    //bool godTier = false;
     String victimBlood = null; //used for murdermode players.
     num hair = null; //num hair = 16;
     String hairColor = null;

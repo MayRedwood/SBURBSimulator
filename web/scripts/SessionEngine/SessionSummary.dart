@@ -332,12 +332,12 @@ class SessionSummary {
                     ////;
                     return false;
                 }
-            }/* else if (filter == "allOfThemAreGodTier") {
-                if (this.getNumStat("numDead") != 0) { //if this were an and on the outer if, it would let it fall down to the else if(!this[filter) and i don't want this.
+            } else if (filter == "allOfThemAreGodTier") {
+                if (this.getNumStat("numMortal") != 0) { //if this were an and on the outer if, it would let it fall down to the else if(!this[filter) and i don't want this.
                     ////;
                     return false;
                 }
-            }*/ else if (filter == "scratched") {
+            } else if (filter == "scratched") {
                 if (!this.scratched) { // a special thing this.isn't in hash.
                     return false;
                 }
@@ -607,6 +607,7 @@ class SessionSummary {
         summary.setBoolStat("yellowYard", session.stats.yellowYard);
         summary.setNumStat("numLiving", findLiving(session.players).length);
         summary.setNumStat("numDead", findDeadPlayers(session.players).length);
+        summary.setNumStat("numMortal", findMortalPlayers(session.players).length);
         summary.setBoolStat("ectoBiologyStarted", session.stats.ectoBiologyStarted);
         summary.setBoolStat("denizenBeat", session.stats.denizenBeat);
         summary.setBoolStat("scratched", session.stats.scratched);

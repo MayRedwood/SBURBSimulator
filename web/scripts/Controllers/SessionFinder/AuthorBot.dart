@@ -74,6 +74,7 @@ abstract class AuthorBot extends SimController {
     String quip = "";
     num living = sessionSummary.getNumStat("numLiving");
     num dead = sessionSummary.getNumStat("numDead");
+    num mortal = sessionSummary.getNumStat("numMortal");
     Player strongest = sessionSummary.mvp;
 
     sessionSummary.bigBadSummary = new BigBadSummary(Session.defaultSession)..fromJSON(sessionSummary.bigBadSummaryJSON.toString());
